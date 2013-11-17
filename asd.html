@@ -5,25 +5,26 @@
   <title>Google Phone Gallery</title>
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <script src="/home/sam/桌面/practice/angular.min.js"></script>
-  <script src="/home/sam/桌面/practice/controllers.js"></script>
+  <script src="angular.min.js"></script>
+  <script src="controllers.js"></script>
 </head>
 <body ng-controller="PhoneListCtrl">
 
-  <ul>
-    <li ng-repeat="phone in phones"> {{phone.name}}
-      <p>{{phone.snippet}}</p>
-      <p>{{phone.age}}</p>
-      <p>Total number of phones: {{phones.length}}</p>
-    </li>
-    <p>{{hello}}</p>
-  </ul>
+  Search: <input ng-model="query">
+Sort by:
+ <select ng-model="orderProp">
+  <option value="name">Alphabetical</option>
+  <option value="age">Newest</option>
+</select>
 
-  <table>
-      <tr><th>row number</th></tr>
-      <tr ng-repeat="i in [0, 1, 2, 3, 4, 5]">
-        <td>{{i}}</td>
-      </tr>
-  </table>
+
+
+
+<ul class="phones">
+  <li ng-repeat="phone in phones | filter:query">
+    {{phone.name}}
+    <p>{{phone.snippet}}</p>
+  </li>
+</ul>
 </body>
 </html>

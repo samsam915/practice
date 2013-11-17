@@ -10,6 +10,4 @@ function PhoneListCtrl($scope) {
      "snippet": "The Next, Next Generation tablet.",
      "age": 2}
   ];
-  $scope.hello = "Hello, World!"
-  $scope.orderProp = 'age';
 }
